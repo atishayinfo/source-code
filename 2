@@ -1,0 +1,42 @@
+To create the `.env` file, you need to check the application’s environment variable requirements. These are usually specified in the `docker-compose.yml` file, backend configuration, or `.env.example` if provided.  
+
+Based on typical setups for full-stack applications with PostgreSQL, your `.env` file may look something like this:  
+
+### **Example `.env` file**  
+
+```env
+# PostgreSQL Database Configuration
+POSTGRES_USER=your_username
+POSTGRES_PASSWORD=your_password
+POSTGRES_DB=your_database
+POSTGRES_HOST=db
+POSTGRES_PORT=5432
+
+# Backend Configuration
+SECRET_KEY=your_secret_key
+DEBUG=True
+ALLOWED_HOSTS=*
+
+# Frontend Configuration
+REACT_APP_API_URL=http://localhost:8000
+
+# Other configurations (if needed)
+```
+
+### **Steps to Set It Up:**  
+1. Create the `.env` file in the root directory of your project:  
+   ```bash
+   touch .env
+   ```  
+2. Open the file in a text editor:  
+   ```bash
+   nano .env
+   ```  
+3. Copy and paste the environment variables (modify values as needed).  
+4. Save and exit (`CTRL + X`, then `Y`, then `Enter`).  
+
+**Next Steps:**  
+- Run `docker-compose up --build` again so the containers pick up the environment variables.  
+- If you face issues, check the `docker-compose.yml` file and any `.env.example` file in the repo.  
+
+Let me know if you need help troubleshooting! 🚀
